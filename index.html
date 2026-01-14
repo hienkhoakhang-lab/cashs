@@ -2,1012 +2,1202 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cashs.site — So sánh khoản vay online nhanh, minh bạch</title>
-  <meta name="description" content="Cashs.site giúp bạn so sánh các lựa chọn vay online từ đối tác (Credy, Creditnice, CashOnline, Finloo, Mazilla, Credilo, Cashspace). Tìm kiếm, lọc, so sánh và chọn phương án phù hợp." />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#F7FAFF" />
+  <title>Cashs.site — Cổng tham khảo & chuyển hướng đăng ký đối tác</title>
+  <meta name="description" content="Cashs.site là cổng tham khảo thông tin và chuyển hướng tới trang đăng ký của các đối tác. Chúng tôi không phải đơn vị cho vay và không thu thập dữ liệu nhạy cảm trên website." />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0b1220" />
   <link rel="canonical" href="https://cashs.site/" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Cashs.site — So sánh khoản vay online nhanh, minh bạch" />
-  <meta property="og:description" content="Tìm kiếm, lọc, so sánh và chọn khoản vay phù hợp từ các đối tác." />
+  <meta property="og:title" content="Cashs.site — Cổng tham khảo & chuyển hướng đăng ký đối tác" />
+  <meta property="og:description" content="Tham khảo thông tin và chuyển hướng tới đối tác. Không phải đơn vị cho vay. Không thu thập dữ liệu nhạy cảm trên website." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cashs.site/" />
+  <meta property="og:image" content="https://cashs.site/og.png" />
 
-  <!-- Optional: set your own favicon files -->
-  <!-- <link rel="icon" href="/favicon.ico" /> -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2338BDF8'/%3E%3Cstop offset='1' stop-color='%2322C55E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23F7FAFF'/%3E%3Cpath d='M18 38c0 8 7 14 14 14s14-6 14-14c0-6-4-11-10-13V16h-8v9C22 27 18 32 18 38z' fill='url(%23g)'/%3E%3Cpath d='M26 39h12' stroke='%230F172A' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
 
   <style>
     :root{
-      --bg: #0b1220;
-      --panel: rgba(255,255,255,0.06);
-      --panel2: rgba(255,255,255,0.08);
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.72);
-      --line: rgba(255,255,255,0.12);
-      --brand: #7dd3fc; /* sky */
-      --brand2: #a78bfa; /* violet */
-      --good: #34d399;
-      --warn: #fbbf24;
-      --bad:  #fb7185;
-      --shadow: 0 18px 50px rgba(0,0,0,0.35);
-      --radius: 18px;
+      --bg: #F7FAFF;
+      --card: #FFFFFF;
+      --card2: #F1F5F9;
+      --text: #0F172A;
+      --muted: #475569;
+      --border: #E2E8F0;
+      --shadow: 0 10px 30px rgba(15,23,42,.08);
+
+      --brand1: #38BDF8; /* primary */
+      --brand2: #22C55E; /* CTA */
+      --warn: #F59E0B;
+      --good: #16A34A;
+      --bad: #DC2626;
+
+      --radius: 16px;
       --radius2: 22px;
       --maxw: 1120px;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
-
-    [data-theme="light"]{
-      --bg: #f6f7fb;
-      --panel: rgba(10, 20, 40, 0.06);
-      --panel2: rgba(10, 20, 40, 0.08);
-      --text: rgba(10, 20, 40, 0.92);
-      --muted: rgba(10, 20, 40, 0.68);
-      --line: rgba(10, 20, 40, 0.12);
-      --shadow: 0 18px 50px rgba(10, 20, 40, 0.18);
-    }
-
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family: var(--font);
-      background: radial-gradient(1200px 700px at 10% 0%, rgba(125,211,252,0.22), transparent 55%),
-                  radial-gradient(900px 600px at 90% 10%, rgba(167,139,250,0.18), transparent 55%),
-                  var(--bg);
-      color: var(--text);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 18% 0%, rgba(56,189,248,.20), transparent 60%),
+        radial-gradient(900px 520px at 82% 0%, rgba(34,197,94,.18), transparent 60%),
+        radial-gradient(900px 520px at 50% 120%, rgba(99,102,241,.10), transparent 65%),
+        var(--bg);
+      overflow-x:hidden;
     }
-    a{color:inherit}
-    .container{max-width:var(--maxw); margin:0 auto; padding: 18px 16px 80px;}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:0 16px}
     .topbar{
-      position: sticky; top:0; z-index: 50;
-      backdrop-filter: blur(14px);
-      background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.10));
-      border-bottom: 1px solid var(--line);
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(1.2) blur(10px);
+      background: rgba(247,250,255,.85);
+      border-bottom:1px solid var(--border);
     }
-    [data-theme="light"] .topbar{
-      background: linear-gradient(to bottom, rgba(246,247,251,0.92), rgba(246,247,251,0.62));
-    }
-    .topbar-inner{
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 12px 16px;
-      display:flex; align-items:center; gap:12px; justify-content: space-between;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      text-decoration:none;
-    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0; gap:12px;}
+    .brand{display:flex; align-items:center; gap:10px; min-width: 180px;}
     .logo{
-      width:38px; height:38px; border-radius: 14px;
-      background: linear-gradient(135deg, rgba(125,211,252,0.92), rgba(167,139,250,0.92));
+      width:38px; height:38px; border-radius:12px;
       box-shadow: var(--shadow);
+      background: linear-gradient(135deg, rgba(56,189,248,.95), rgba(34,197,94,.95));
       display:grid; place-items:center;
-      font-weight: 800; color: rgba(10,20,40,0.95);
-      letter-spacing: -0.02em;
+      border:1px solid var(--border);
     }
-    .brand-title{display:flex; flex-direction:column; line-height:1.1}
-    .brand-title b{font-size: 14px; letter-spacing: 0.01em}
-    .brand-title span{font-size: 12px; color: var(--muted)}
-    .nav{
-      display:flex; align-items:center; gap:10px;
-    }
-    .nav a{
-      text-decoration:none;
-      font-size: 13px;
-      padding: 8px 10px;
-      border-radius: 12px;
-      color: var(--muted);
-      border: 1px solid transparent;
-    }
-    .nav a:hover{border-color: var(--line); color: var(--text); background: var(--panel)}
-    .btn{
-      appearance:none; border:1px solid var(--line); background: var(--panel);
-      color: var(--text);
-      padding: 10px 12px;
-      border-radius: 14px;
-      cursor:pointer;
-      font-size: 13px;
+    .logo svg{width:22px; height:22px; opacity:.98}
+    .brand h1{font-size:15px; line-height:1.1; margin:0}
+    .brand p{font-size:12px; margin:2px 0 0; color:var(--muted)}
+    .menu{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .chip{
+      padding:8px 12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.7);
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
       display:inline-flex; align-items:center; gap:8px;
     }
-    .btn:hover{background: var(--panel2)}
-    .btn-primary{
-      border-color: rgba(125,211,252,0.35);
-      background: linear-gradient(135deg, rgba(125,211,252,0.22), rgba(167,139,250,0.16));
+    .chip:hover{color:var(--text); border-color:rgba(56,189,248,.35)}
+    .btn{
+      border:none; cursor:pointer;
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:13px;
+      color:#062016;
+      background: linear-gradient(135deg, var(--brand1), var(--brand2));
+      box-shadow: 0 10px 22px rgba(34,197,94,.18);
+      display:inline-flex; align-items:center; gap:8px;
     }
-    .btn-primary:hover{
-      border-color: rgba(125,211,252,0.55);
-      background: linear-gradient(135deg, rgba(125,211,252,0.30), rgba(167,139,250,0.22));
+    .btn:active{transform: translateY(1px)}
+    .ghost{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.7);
+      color:var(--text);
+      box-shadow:none;
+      font-weight:800;
     }
-    .hero{
-      padding: 18px 0 10px;
-      display:grid; gap:14px;
-    }
-    .hero-grid{
-      display:grid; gap:14px;
-      grid-template-columns: 1fr;
-    }
-    @media (min-width: 920px){
-      .hero-grid{grid-template-columns: 1.05fr 0.95fr; align-items: stretch}
-    }
+
+    .hero{padding:26px 0 10px;}
+    .heroGrid{display:grid; grid-template-columns: 1.2fr .8fr; gap:14px; align-items:stretch;}
+    @media (max-width: 920px){ .heroGrid{grid-template-columns: 1fr;} .brand{min-width:auto} }
+
     .card{
-      background: var(--panel);
-      border: 1px solid var(--line);
+      border:1px solid var(--border);
       border-radius: var(--radius2);
+      background: rgba(255,255,255,.75);
       box-shadow: var(--shadow);
+      padding:18px;
+      position:relative;
+      overflow:hidden;
     }
-    .card-pad{padding: 16px}
-    h1{
-      margin:0;
-      font-size: 24px;
-      letter-spacing: -0.03em;
+    .card:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background:
+        radial-gradient(420px 220px at 12% 8%, rgba(56,189,248,.14), transparent 60%),
+        radial-gradient(420px 220px at 78% 16%, rgba(34,197,94,.12), transparent 60%);
+      pointer-events:none;
+      opacity:.9;
     }
-    @media (min-width: 520px){
-      h1{font-size: 30px}
+    .card > *{position:relative}
+
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.65);
+      color:var(--muted);
+      font-size:12px;
+      margin-bottom:10px;
     }
-    .sub{
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.55;
+    .title{
+      font-size:30px;
+      line-height:1.12;
+      margin:6px 0 10px;
+      letter-spacing: -0.02em;
     }
-    .trust-row{
-      display:flex; flex-wrap:wrap; gap:8px; margin-top: 12px;
+    @media (max-width: 420px){ .title{font-size:26px} }
+    .subtitle{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+      max-width: 62ch;
     }
-    .chip{
-      font-size: 12px;
-      color: var(--muted);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 7px 10px;
-      background: rgba(255,255,255,0.03);
-    }
-    [data-theme="light"] .chip{background: rgba(10,20,40,0.03)}
-    .disclaimer{
-      margin-top: 12px;
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.5;
+    .heroActions{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .trustRow{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.65);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:12px;
     }
 
-    .tools{
-      display:grid; gap:10px;
-    }
-    .row{display:flex; gap:10px; flex-wrap:wrap}
-    .field{
-      flex: 1;
-      min-width: 200px;
-      display:flex; flex-direction:column; gap:6px;
-    }
-    .label{font-size: 12px; color: var(--muted)}
-    .input, select{
-      width:100%;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
-      color: var(--text);
-      padding: 11px 12px;
-      outline:none;
-      font-size: 14px;
-    }
-    [data-theme="light"] .input, [data-theme="light"] select{
-      background: rgba(10,20,40,0.03);
-    }
-    select{cursor:pointer}
-    .hint{font-size: 12px; color: var(--muted); margin-top: 4px}
+    .section{padding:18px 0;}
+    .sectionHead{display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin: 8px 0 14px;}
+    .sectionHead h2{margin:0; font-size:18px}
+    .sectionHead p{margin:0; color:var(--muted); font-size:13px}
 
-    .offers{
-      margin-top: 14px;
-      display:grid;
-      gap:12px;
-      grid-template-columns: 1fr;
-    }
-    @media (min-width: 720px){
-      .offers{grid-template-columns: 1fr 1fr}
-    }
-    @media (min-width: 1080px){
-      .offers{grid-template-columns: 1fr 1fr 1fr}
-    }
+    .grid{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;}
+    @media (max-width: 980px){ .grid{grid-template-columns: repeat(2, 1fr);} }
+    @media (max-width: 560px){ .grid{grid-template-columns: 1fr;} }
+
     .offer{
-      padding: 14px;
+      border:1px solid var(--border);
       border-radius: var(--radius);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--line);
-      display:flex; flex-direction:column; gap:10px;
-      min-height: 220px;
-    }
-    [data-theme="light"] .offer{background: rgba(10,20,40,0.03)}
-    .offer-top{
-      display:flex; align-items:flex-start; justify-content: space-between; gap:10px;
-    }
-    .offer-name{
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      font-size: 16px;
-      margin:0;
-    }
-    .tag{
-      font-size: 11px;
-      padding: 6px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      color: var(--muted);
-      background: rgba(255,255,255,0.02);
-      white-space: nowrap;
-    }
-    .offer-desc{
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-      margin:0;
-    }
-    .bullets{
-      margin:0;
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
-    }
-    .bullets li{margin: 6px 0}
-    .actions{
-      margin-top:auto;
-      display:flex; gap:8px; flex-wrap:wrap;
-    }
-    .link{
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center; justify-content:center;
-      gap:8px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
-      color: var(--text);
-      font-size: 13px;
-      flex: 1;
-      min-width: 120px;
-    }
-    [data-theme="light"] .link{background: rgba(10,20,40,0.03)}
-    .link:hover{background: var(--panel2)}
-    .link.primary{
-      border-color: rgba(125,211,252,0.35);
-      background: linear-gradient(135deg, rgba(125,211,252,0.20), rgba(167,139,250,0.14));
-      font-weight: 700;
-    }
-    .link.primary:hover{border-color: rgba(125,211,252,0.55)}
-    .compare{
-      display:flex; align-items:center; gap:8px;
-      font-size: 12px;
-      color: var(--muted);
-      user-select:none;
-    }
-    .compare input{width:16px; height:16px}
-
-    .section{
-      margin-top: 18px;
-      padding: 16px;
-      border-radius: var(--radius2);
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-    }
-    [data-theme="light"] .section{background: rgba(10,20,40,0.02)}
-    .section h2{
-      margin:0 0 8px 0;
-      font-size: 16px;
-      letter-spacing: -0.02em;
-    }
-    .section p{
-      margin: 8px 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-    .grid2{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:12px;
-    }
-    @media (min-width: 920px){
-      .grid2{grid-template-columns: 1fr 1fr}
-    }
-
-    .faq .q{
-      width: 100%;
-      text-align:left;
-      display:flex; justify-content:space-between; gap:10px; align-items:center;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-      cursor:pointer;
-      color: var(--text);
-      font-size: 13px;
-      font-weight: 700;
-    }
-    [data-theme="light"] .faq .q{background: rgba(10,20,40,0.02)}
-    .faq .q:hover{background: var(--panel2)}
-    .faq .a{
-      display:none;
-      padding: 10px 12px 14px 12px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-    .faq .item{margin-top: 10px}
-    .footer{
-      margin-top: 18px;
-      padding: 16px;
-      border-radius: var(--radius2);
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.02);
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.6;
-    }
-    [data-theme="light"] .footer{background: rgba(10,20,40,0.02)}
-    .footer a{color: var(--text); text-decoration:none}
-    .footer a:hover{text-decoration:underline}
-
-    /* Sticky CTA (mobile) */
-    .sticky-cta{
-      position: fixed;
-      left: 0; right: 0; bottom: 0;
-      padding: 10px 12px;
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(14px);
-      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 10px 22px rgba(15,23,42,.06);
+      padding:14px;
       display:flex;
+      flex-direction:column;
       gap:10px;
-      z-index: 60;
+      min-height: 200px;
+      position:relative;
+      overflow:hidden;
     }
-    [data-theme="light"] .sticky-cta{
-      background: rgba(246,247,251,0.72);
+    .offer:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background:
+        radial-gradient(240px 140px at 10% 5%, rgba(56,189,248,.10), transparent 60%),
+        radial-gradient(240px 140px at 90% 10%, rgba(34,197,94,.10), transparent 60%);
+      pointer-events:none;
     }
-    .sticky-cta .btn{
-      flex: 1;
-      justify-content:center;
-      padding: 12px 12px;
-      border-radius: 16px;
-      font-weight: 800;
+    .offer > *{position:relative}
+    .offerTop{display:flex; align-items:center; justify-content:space-between; gap:10px;}
+    .offerName{display:flex; align-items:center; gap:10px; min-width: 0;}
+    .badgeLogo{
+      width:40px; height:40px; border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(241,245,249,.9);
+      display:grid; place-items:center;
+      flex: 0 0 auto;
     }
-    @media (min-width: 920px){
-      .sticky-cta{display:none}
+    .badgeLogo span{font-weight:900; font-size:13px; letter-spacing:.02em;}
+    .offerName h3{margin:0; font-size:16px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+    .tag{
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid var(--border);
+      background: rgba(241,245,249,.85);
+      padding:6px 10px;
+      border-radius:999px;
+      flex: 0 0 auto;
     }
+    .offerDesc{margin:0; color:var(--muted); font-size:13px; line-height:1.6;}
+    .points{margin:0; padding-left:18px; color:var(--muted); font-size:13px; line-height:1.65;}
+    .offerActions{margin-top:auto; display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between;}
+    .small{font-size:12px; color:var(--muted);}
+    .link{color: var(--text); text-decoration: underline; text-underline-offset: 3px; opacity:.9;}
 
-    /* Compare drawer */
-    .compare-drawer{
-      position: fixed;
-      right: 12px; bottom: 76px;
-      width: min(420px, calc(100vw - 24px));
+    .faq{
+      border:1px solid var(--border);
       border-radius: var(--radius2);
-      border: 1px solid var(--line);
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,.78);
       box-shadow: var(--shadow);
-      padding: 12px;
-      display:none;
-      z-index: 70;
+      overflow:hidden;
     }
-    [data-theme="light"] .compare-drawer{
-      background: rgba(246,247,251,0.86);
+    .qa{border-top:1px solid var(--border); padding:14px 14px;}
+    .qa:first-child{border-top:none}
+    .q{display:flex; align-items:center; justify-content:space-between; gap:12px; cursor:pointer; user-select:none;}
+    .q h3{margin:0; font-size:14px}
+    .q .chev{
+      width:34px; height:34px; border-radius:10px;
+      border:1px solid var(--border);
+      display:grid; place-items:center;
+      background: rgba(241,245,249,.9);
+      transition: transform .18s ease;
+      flex: 0 0 auto;
     }
-    .compare-drawer h3{
-      margin:0 0 8px 0;
-      font-size: 14px;
-      letter-spacing:-0.02em;
-    }
-    .compare-list{display:grid; gap:8px; margin-top: 8px}
-    .compare-item{
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 10px;
-      background: rgba(255,255,255,0.03);
-      display:flex; justify-content:space-between; align-items:center; gap:10px;
-    }
-    [data-theme="light"] .compare-item{background: rgba(10,20,40,0.02)}
-    .small{font-size: 12px; color: var(--muted)}
-    .xbtn{
-      border: 1px solid var(--line);
-      background: transparent;
-      color: var(--text);
-      border-radius: 12px;
-      padding: 7px 10px;
-      cursor:pointer;
-      font-size: 12px;
-    }
-    .xbtn:hover{background: var(--panel2)}
-    .compare-actions{display:flex; gap:8px; margin-top: 10px}
-    .compare-actions .btn{flex:1; justify-content:center}
-    .hr{height:1px; background: var(--line); margin: 10px 0}
-  </style>
+    .a{max-height:0; overflow:hidden; transition: max-height .22s ease;}
+    .a p{margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.7;}
+    .qa.open .a{max-height: 320px}
+    .qa.open .q .chev{transform: rotate(180deg)}
 
-  <!-- Minimal structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Cashs.site",
-    "url": "https://cashs.site/",
-    "description": "So sánh các lựa chọn vay online từ đối tác, giúp người dùng tìm kiếm, lọc và chọn phương án phù hợp."
-  }
-  </script>
+    .footer{padding:26px 0 96px; border-top:1px solid var(--border); margin-top:10px;}
+    .footGrid{display:grid; grid-template-columns: 1.25fr .75fr; gap:16px; align-items:start;}
+    @media (max-width: 860px){ .footGrid{grid-template-columns:1fr} }
+    .footNote{color:var(--muted); font-size:12.5px; line-height:1.7}
+    .footLinks{display:flex; gap:10px; flex-wrap:wrap}
+
+    .stickyCta{
+      position:fixed; left:0; right:0; bottom:0;
+      padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+      background: rgba(247,250,255,.92);
+      backdrop-filter: blur(10px);
+      border-top:1px solid var(--border);
+      z-index:60;
+    }
+    .stickyRow{
+      max-width:var(--maxw); margin:0 auto;
+      display:flex; gap:10px; align-items:center; justify-content:space-between;
+    }
+    .select{
+      flex: 1 1 auto; min-width: 0;
+      border:1px solid var(--border);
+      border-radius: 999px;
+      padding:12px 14px;
+      background: rgba(255,255,255,.88);
+      color: var(--text);
+      font-weight:800;
+      outline:none;
+      appearance:none;
+      cursor:pointer;
+    }
+    .sr{position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden;}
+  </style>
 </head>
 
 <body>
-  <div class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="#top" aria-label="Cashs.site">
-        <div class="logo">C$</div>
-        <div class="brand-title">
-          <b>Cashs.site</b>
-          <span>So sánh vay online minh bạch</span>
-        </div>
-      </a>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="Cashs.site">
+          <div class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 14.5C7 17.537 9.463 20 12.5 20C15.537 20 18 17.537 18 14.5C18 12.136 16.51 10.115 14.4 9.33V4H10.6V9.33C8.49 10.115 7 12.136 7 14.5Z" fill="rgba(15,23,42,.92)"/>
+              <path d="M10 14.5h5" stroke="rgba(15,23,42,.92)" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h1>Cashs.site</h1>
+            <p>Thông tin tham khảo • Chuyển hướng đối tác</p>
+          </div>
+        </a>
 
-      <div class="nav" aria-label="Điều hướng">
-        <a href="#offers">Offers</a>
-        <a href="#how">Cách hoạt động</a>
-        <a href="#faq">FAQ</a>
-        <a href="#policy">Chính sách</a>
-        <button class="btn" id="themeBtn" type="button" title="Bật/Tắt giao diện">
-          <span id="themeIcon">🌙</span><span>Giao diện</span>
-        </button>
+        <nav class="menu" aria-label="Menu">
+          <a class="chip" href="#offers">Đối tác</a>
+          <a class="chip" href="#how">Quy trình</a>
+          <a class="chip" href="#faq">FAQ</a>
+          <a class="chip" href="terms.html">Điều khoản</a>
+          <a class="chip" href="privacy.html">Chính sách</a>
+          <a class="btn" href="#offers">Chọn đối tác</a>
+        </nav>
       </div>
     </div>
-  </div>
+  </header>
 
-  <main id="top" class="container">
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="card card-pad">
-          <h1>Chọn khoản vay online phù hợp — nhanh, rõ ràng, dễ so sánh</h1>
-          <p class="sub">
-            Cashs.site tổng hợp các lựa chọn vay từ đối tác uy tín. Bạn có thể tìm kiếm, lọc, so sánh và nhấn đăng ký trực tiếp.
-            Thông tin hiển thị mang tính tham khảo; điều kiện cuối cùng phụ thuộc đơn vị cho vay.
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="heroGrid">
+        <div class="card">
+          <div class="kicker">● Website tham khảo thông tin và chuyển hướng đăng ký</div>
+          <h2 class="title">Chọn đối tác phù hợp và tiếp tục đăng ký trên trang chính thức</h2>
+          <p class="subtitle">
+            Cashs.site <strong>không phải đơn vị cho vay</strong>. Website chỉ cung cấp thông tin tham khảo và liên kết chuyển hướng.
+            Việc xét duyệt, điều kiện, phí và quy trình thuộc về từng đối tác.
           </p>
 
-          <div class="trust-row" role="list" aria-label="Điểm tin cậy">
-            <span class="chip" role="listitem">Tối ưu Mobile</span>
-            <span class="chip" role="listitem">Tìm kiếm & Lọc</span>
-            <span class="chip" role="listitem">So sánh 3 offers</span>
-            <span class="chip" role="listitem">Dark mode</span>
-            <span class="chip" role="listitem">Bảo mật & Minh bạch</span>
+          <div class="heroActions">
+            <a class="btn" href="#offers">Xem đối tác</a>
+            <a class="btn ghost" href="contact.html">Liên hệ</a>
           </div>
 
-          <p class="disclaimer">
-            Lưu ý: Không có nội dung nào trên trang này là tư vấn tài chính/pháp lý. Vui lòng đọc kỹ điều khoản, lãi suất (APR),
-            phí và lịch thanh toán trên trang của đối tác trước khi đăng ký.
-          </p>
-
-          <div class="row" style="margin-top:12px;">
-            <a class="link primary" href="#offers">Xem 7 lựa chọn</a>
-            <a class="link" href="#how">Xem cách hoạt động</a>
+          <div class="trustRow" aria-label="Nguyên tắc an toàn">
+            <span class="pill">Không yêu cầu OTP/mật khẩu</span>
+            <span class="pill">Không nhập dữ liệu nhạy cảm tại đây</span>
+            <span class="pill">Khuyến nghị vay có trách nhiệm</span>
           </div>
         </div>
 
-        <div class="card card-pad">
-          <div class="tools" aria-label="Công cụ lọc">
-            <div class="row">
-              <div class="field">
-                <div class="label">Tìm theo tên offer</div>
-                <input id="searchInput" class="input" type="search" placeholder="Ví dụ: Credy, Cash..." autocomplete="off" />
-                <div class="hint">Gõ để lọc realtime.</div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="field">
-                <div class="label">Lọc nhanh</div>
-                <select id="tagFilter">
-                  <option value="all">Tất cả</option>
-                  <option value="fast">Duyệt nhanh</option>
-                  <option value="simple">Thủ tục đơn giản</option>
-                  <option value="popular">Phổ biến</option>
-                  <option value="flex">Linh hoạt</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <div class="label">Sắp xếp</div>
-                <select id="sortBy">
-                  <option value="name_asc">Tên A → Z</option>
-                  <option value="name_desc">Tên Z → A</option>
-                  <option value="badge">Ưu tiên “Phổ biến”</option>
-                </select>
-                <div class="hint">Bạn có thể chỉnh logic xếp hạng theo nhu cầu.</div>
-              </div>
-            </div>
-
-            <div class="row">
-              <button class="btn btn-primary" id="resetBtn" type="button">Đặt lại bộ lọc</button>
-              <button class="btn" id="compareOpenBtn" type="button">Mở so sánh</button>
-            </div>
-
-            <div class="hr"></div>
-
-            <div class="small">
-              Mẹo: Tick “So sánh” trên từng offer (tối đa 3) để mở bảng so sánh nhanh.
-            </div>
-          </div>
-        </div>
+        <aside class="card">
+          <h3 style="margin:0; font-size:14px;">Thông tin quan trọng</h3>
+          <p style="margin:8px 0 0; color:var(--muted); font-size:13px; line-height:1.7;">
+            Để giảm rủi ro bị từ chối/hủy yêu cầu, bạn nên:
+          </p>
+          <ul style="margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:13px; line-height:1.7;">
+            <li>Điền thông tin chính xác, tránh dùng dữ liệu giả</li>
+            <li>Đọc kỹ phí, lãi (nếu có), thời hạn, điều kiện</li>
+            <li>Không cung cấp OTP/mật khẩu cho bất kỳ ai</li>
+            <li>Chỉ đăng ký khi bạn hiểu rõ nghĩa vụ thanh toán</li>
+          </ul>
+          <p style="margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.7;">
+            Xem thêm: <a class="link" href="terms.html">Điều khoản</a> • <a class="link" href="privacy.html">Chính sách</a>
+          </p>
+        </aside>
       </div>
     </section>
 
     <!-- OFFERS -->
     <section id="offers" class="section">
-      <h2>7 lựa chọn hiện có</h2>
-      <p>
-        Nhấn “Đăng ký” để chuyển sang trang đối tác. Các link hiện đang để placeholder — bạn chỉ cần thay bằng link affiliate thật.
-      </p>
+      <div class="sectionHead">
+        <div>
+          <h2>Danh sách đối tác</h2>
+          <p>Nhấn “Tiếp tục” để mở trang đối tác trong tab mới.</p>
+        </div>
+        <p class="small">Không cam kết duyệt. Điều kiện do đối tác quyết định.</p>
+      </div>
 
-      <div id="offersGrid" class="offers" aria-label="Danh sách offers"></div>
-
-      <p class="disclaimer" style="margin-top:12px;">
-        Minh bạch affiliate: Cashs.site có thể nhận hoa hồng khi bạn đăng ký qua liên kết đối tác.
-        Điều này không làm tăng chi phí cho bạn, nhưng giúp duy trì vận hành trang.
-      </p>
+      <div class="grid" id="offerGrid"></div>
     </section>
 
-    <!-- HOW IT WORKS -->
+    <!-- HOW -->
     <section id="how" class="section">
-      <h2>Cách Cashs.site hoạt động</h2>
-      <div class="grid2">
+      <div class="sectionHead">
         <div>
-          <p><b>1) Tìm & lọc</b>: Bạn chọn theo nhu cầu (duyệt nhanh, thủ tục đơn giản, phổ biến).</p>
-          <p><b>2) So sánh</b>: Tick tối đa 3 offer để xem bảng so sánh nhanh.</p>
-          <p><b>3) Đăng ký</b>: Nhấn “Đăng ký” để sang trang đối tác và hoàn tất theo hướng dẫn.</p>
+          <h2>Quy trình</h2>
+          <p>Minh bạch vai trò: Cashs.site chỉ chuyển hướng tới đối tác.</p>
         </div>
-        <div>
-          <p><b>Cam kết về trải nghiệm</b>: UI rõ ràng, ưu tiên mobile, hạn chế quảng cáo gây nhiễu.</p>
-          <p><b>Lưu ý quan trọng</b>: Điều kiện duyệt, hạn mức, lãi/phí phụ thuộc từng đối tác và hồ sơ người dùng.</p>
+      </div>
+
+      <div class="grid">
+        <div class="offer">
+          <div class="offerTop">
+            <div class="offerName">
+              <div class="badgeLogo"><span>1</span></div>
+              <h3>Chọn đối tác</h3>
+            </div>
+            <span class="tag">Tham khảo</span>
+          </div>
+          <p class="offerDesc">Xem thông tin và chọn một đối tác phù hợp với nhu cầu của bạn.</p>
+          <ul class="points">
+            <li>Ưu tiên điều kiện rõ ràng</li>
+            <li>Đọc kỹ các khoản phí/điều khoản</li>
+          </ul>
+        </div>
+
+        <div class="offer">
+          <div class="offerTop">
+            <div class="offerName">
+              <div class="badgeLogo"><span>2</span></div>
+              <h3>Đăng ký trên trang đối tác</h3>
+            </div>
+            <span class="tag">Chính thức</span>
+          </div>
+          <p class="offerDesc">Bạn sẽ được chuyển sang trang đối tác để thực hiện đăng ký theo quy trình của họ.</p>
+          <ul class="points">
+            <li>Không chia sẻ OTP/mật khẩu</li>
+            <li>Điền thông tin trung thực</li>
+          </ul>
+        </div>
+
+        <div class="offer">
+          <div class="offerTop">
+            <div class="offerName">
+              <div class="badgeLogo"><span>3</span></div>
+              <h3>Nhận phản hồi</h3>
+            </div>
+            <span class="tag">Tùy đối tác</span>
+          </div>
+          <p class="offerDesc">Thời gian xử lý và kết quả phụ thuộc vào đối tác và thông tin hồ sơ.</p>
+          <ul class="points">
+            <li>Không có cam kết duyệt</li>
+            <li>Chỉ đăng ký khi hiểu nghĩa vụ tài chính</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="section faq">
-      <h2>FAQ</h2>
-
-      <div class="item">
-        <button class="q" type="button">
-          <span>Cashs.site có phải bên cho vay không?</span><span>+</span>
-        </button>
-        <div class="a">
-          Không. Cashs.site là trang tổng hợp/so sánh và chuyển hướng sang trang đối tác. Việc xét duyệt và giải ngân do đối tác thực hiện.
+    <section id="faq" class="section">
+      <div class="sectionHead">
+        <div>
+          <h2>FAQ</h2>
+          <p>Câu trả lời rõ ràng để giảm hiểu nhầm và rủi ro.</p>
         </div>
       </div>
 
-      <div class="item">
-        <button class="q" type="button">
-          <span>Tôi cần chuẩn bị gì khi đăng ký?</span><span>+</span>
-        </button>
-        <div class="a">
-          Thông thường cần thông tin cá nhân cơ bản theo yêu cầu của đối tác. Bạn nên đọc kỹ điều khoản, lãi suất (APR), phí, và lịch thanh toán trước khi xác nhận.
+      <div class="faq" id="faqBox">
+        <div class="qa">
+          <div class="q" role="button" tabindex="0" aria-expanded="false">
+            <h3>Cashs.site có phải đơn vị cho vay không?</h3>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </div>
+          <div class="a" aria-hidden="true">
+            <p>
+              Không. Cashs.site là website tham khảo và chuyển hướng tới trang đăng ký của đối tác.
+              Việc xét duyệt, điều kiện, phí và hợp đồng thuộc về từng đối tác.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="item">
-        <button class="q" type="button">
-          <span>Cashs.site có thu phí người dùng không?</span><span>+</span>
-        </button>
-        <div class="a">
-          Cashs.site không thu phí trực tiếp. Trang có thể nhận hoa hồng affiliate khi bạn đăng ký qua liên kết đối tác.
+        <div class="qa">
+          <div class="q" role="button" tabindex="0" aria-expanded="false">
+            <h3>Tôi có cần nhập thông tin nhạy cảm trên Cashs.site không?</h3>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </div>
+          <div class="a" aria-hidden="true">
+            <p>
+              Không. Cashs.site không thiết kế để thu thập dữ liệu nhạy cảm (OTP, mật khẩu, thông tin tài khoản).
+              Khi bạn chuyển sang đối tác, họ có chính sách riêng về thu thập và xử lý dữ liệu.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="item">
-        <button class="q" type="button">
-          <span>Làm sao để so sánh offers?</span><span>+</span>
-        </button>
-        <div class="a">
-          Tick “So sánh” trên từng offer (tối đa 3). Sau đó mở “Bảng so sánh” ở góc dưới phải (desktop) hoặc nút “Mở so sánh”.
+        <div class="qa">
+          <div class="q" role="button" tabindex="0" aria-expanded="false">
+            <h3>Tại sao tôi bị từ chối/hủy yêu cầu?</h3>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </div>
+          <div class="a" aria-hidden="true">
+            <p>
+              Kết quả phụ thuộc vào đối tác và hồ sơ. Một số nguyên nhân phổ biến: thông tin không khớp, thiếu giấy tờ,
+              không đáp ứng điều kiện, hoặc trùng lặp đăng ký nhiều nơi. Bạn nên điền thông tin chính xác và đọc điều khoản.
+            </p>
+          </div>
+        </div>
+
+        <div class="qa">
+          <div class="q" role="button" tabindex="0" aria-expanded="false">
+            <h3>Cashs.site có cam kết giải ngân/duyệt nhanh không?</h3>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </div>
+          <div class="a" aria-hidden="true">
+            <p>
+              Không. Cashs.site không đưa ra cam kết duyệt/giải ngân. Các thông tin về thời gian xử lý (nếu có) thuộc về đối tác.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- POLICY -->
-    <section id="policy" class="section">
-      <h2>Chính sách & Điều khoản</h2>
-      <p>
-        <b>1) Miễn trừ trách nhiệm:</b> Nội dung chỉ mang tính thông tin tham khảo, không phải tư vấn tài chính/pháp lý.
-      </p>
-      <p>
-        <b>2) Affiliate:</b> Cashs.site có thể nhận hoa hồng từ đối tác khi người dùng đăng ký qua liên kết.
-      </p>
-      <p>
-        <b>3) Bảo mật:</b> Cashs.site không yêu cầu bạn nhập dữ liệu nhạy cảm trực tiếp trên trang này. Khi bấm đăng ký, bạn sẽ chuyển sang trang đối tác.
-      </p>
-      <p>
-        <b>4) Tuân thủ:</b> Người dùng tự chịu trách nhiệm đọc và đồng ý điều khoản của đối tác; chỉ đăng ký khi hiểu rõ lãi/phí và khả năng chi trả.
-      </p>
-    </section>
+    <footer class="footer" id="footer">
+      <div class="footGrid">
+        <div>
+          <div class="brand" style="min-width:auto">
+            <div class="logo" aria-hidden="true" style="width:34px;height:34px;border-radius:12px">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7 14.5C7 17.537 9.463 20 12.5 20C15.537 20 18 17.537 18 14.5C18 12.136 16.51 10.115 14.4 9.33V4H10.6V9.33C8.49 10.115 7 12.136 7 14.5Z" fill="rgba(15,23,42,.92)"/>
+                <path d="M10 14.5h5" stroke="rgba(15,23,42,.92)" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h1 style="font-size:14px;margin:0">Cashs.site</h1>
+              <p style="margin:2px 0 0;color:var(--muted);font-size:12px">Tham khảo • Chuyển hướng</p>
+            </div>
+          </div>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <h2>Liên hệ</h2>
-      <p>
-        Bạn có thể đặt kênh liên hệ tại đây (email/Telegram/Zalo). Hiện đang để placeholder.
-      </p>
-      <p class="small">
-        Email: <a href="mailto:contact@cashs.site">contact@cashs.site</a> (thay bằng email thật nếu bạn có)
-      </p>
-    </section>
+          <p class="footNote" style="margin-top:12px">
+            <strong>Miễn trừ trách nhiệm:</strong> Cashs.site chỉ cung cấp thông tin tham khảo và liên kết chuyển hướng.
+            Cashs.site không phải tổ chức tín dụng/cho vay, không đại diện đối tác ký kết hợp đồng, không quyết định xét duyệt,
+            hạn mức, chi phí hoặc điều kiện. Quyết định thuộc về đối tác.
+          </p>
+          <p class="footNote">
+            <strong>Khuyến nghị:</strong> Vay có trách nhiệm. Chỉ đăng ký khi bạn hiểu rõ nghĩa vụ thanh toán và khả năng chi trả.
+          </p>
+        </div>
 
-    <footer class="footer">
-      <div><b>Cashs.site</b> — © <span id="year"></span>. All rights reserved.</div>
-      <div>
-        Nội dung trên trang không phải là tư vấn tài chính. Hãy cân nhắc khả năng chi trả và đọc kỹ điều khoản của đối tác.
-      </div>
-      <div style="margin-top:8px;">
-        Điều hướng: <a href="#offers">Offers</a> · <a href="#how">Cách hoạt động</a> · <a href="#faq">FAQ</a> · <a href="#policy">Chính sách</a>
+        <div>
+          <h3 style="margin:0 0 10px;font-size:14px">Pháp lý & liên hệ</h3>
+          <div class="footLinks">
+            <a class="chip" href="terms.html">Điều khoản</a>
+            <a class="chip" href="privacy.html">Chính sách</a>
+            <a class="chip" href="contact.html">Liên hệ</a>
+          </div>
+          <p class="footNote" style="margin-top:12px">
+            Nếu bạn là đối tác/đơn vị liên quan và cần xử lý nội dung, vui lòng liên hệ qua trang Liên hệ.
+          </p>
+        </div>
       </div>
     </footer>
   </main>
 
-  <!-- Sticky CTA (mobile) -->
-  <div class="sticky-cta" role="navigation" aria-label="CTA">
-    <button class="btn btn-primary" type="button" onclick="document.querySelector('#offers').scrollIntoView({behavior:'smooth'})">
-      Xem offers
-    </button>
-    <button class="btn" id="stickyCompareBtn" type="button">So sánh</button>
+  <!-- Sticky CTA -->
+  <div class="stickyCta" role="region" aria-label="Chuyển hướng nhanh">
+    <div class="stickyRow">
+      <label class="sr" for="quickSelect">Chọn đối tác</label>
+      <select class="select" id="quickSelect" aria-label="Chọn đối tác để chuyển hướng">
+        <option value="" selected>Chọn đối tác để tiếp tục…</option>
+      </select>
+      <button class="btn" id="quickGo" type="button">Tiếp tục</button>
+    </div>
   </div>
 
-  <!-- Compare drawer -->
-  <aside class="compare-drawer" id="compareDrawer" aria-label="Bảng so sánh">
-    <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
-      <h3>Bảng so sánh nhanh</h3>
-      <button class="xbtn" id="compareCloseBtn" type="button">Đóng</button>
-    </div>
-    <div class="small">Chọn tối đa 3 offers. (Mục “đặc điểm” là gợi ý UI — bạn có thể chỉnh theo thông tin thực tế.)</div>
-    <div class="compare-list" id="compareList"></div>
-    <div class="compare-actions">
-      <button class="btn" id="compareClearBtn" type="button">Xoá chọn</button>
-      <button class="btn btn-primary" id="compareScrollBtn" type="button">Cuộn tới offers</button>
-    </div>
-  </aside>
-
   <script>
-    // -----------------------
-    // CONFIG: Offers + Links
-    // -----------------------
-    const OFFERS = [
-      {
-        id: "credy",
-        name: "Credy",
-        tag: "popular",
-        tagline: "Phổ biến, trải nghiệm đăng ký nhanh",
-        desc: "Phù hợp người cần quy trình gọn, thao tác trên điện thoại.",
-        bullets: ["Tối ưu mobile", "Quy trình đơn giản", "Hỗ trợ nhiều hồ sơ"],
-        aff: "YOUR_AFF_LINK_HERE" // <-- thay link
-      },
-      {
-        id: "creditnice",
-        name: "Creditnice",
-        tag: "fast",
-        tagline: "Ưu tiên duyệt nhanh",
-        desc: "Gợi ý cho nhu cầu cần tốc độ xử lý nhanh (tuỳ hồ sơ).",
-        bullets: ["Duyệt nhanh", "Thao tác online", "Hướng dẫn rõ ràng"],
-        aff: "YOUR_AFF_LINK_HERE"
-      },
-      {
-        id: "cashonline",
-        name: "CashOnline",
-        tag: "simple",
-        tagline: "Thủ tục đơn giản",
-        desc: "Quy trình đăng ký ngắn gọn, thao tác từng bước.",
-        bullets: ["Form đơn giản", "Mobile-first", "Trải nghiệm gọn"],
-        aff: "YOUR_AFF_LINK_HERE"
-      },
-      {
-        id: "finloo",
-        name: "Finloo",
-        tag: "flex",
-        tagline: "Lựa chọn linh hoạt",
-        desc: "Phù hợp người muốn cân nhắc nhiều tiêu chí, trải nghiệm thân thiện.",
-        bullets: ["Giao diện dễ dùng", "Hỗ trợ linh hoạt", "Thao tác nhanh"],
-        aff: "YOUR_AFF_LINK_HERE"
-      },
-      {
-        id: "mazilla",
-        name: "Mazilla",
-        tag: "popular",
-        tagline: "Phổ biến, dễ bắt đầu",
-        desc: "Một lựa chọn phổ biến cho người cần quy trình rõ ràng.",
-        bullets: ["Dễ thao tác", "Hướng dẫn rõ", "Mobile-ready"],
-        aff: "YOUR_AFF_LINK_HERE"
-      },
-      {
-        id: "credilo",
-        name: "Credilo",
-        tag: "fast",
-        tagline: "Tối ưu thời gian",
-        desc: "Gợi ý cho nhu cầu xử lý nhanh, thao tác online.",
-        bullets: ["Ưu tiên tốc độ", "Quy trình online", "Dễ theo dõi bước"],
-        aff: "YOUR_AFF_LINK_HERE"
-      },
-      {
-        id: "cashspace",
-        name: "Cashspace",
-        tag: "simple",
-        tagline: "Đơn giản, rõ ràng",
-        desc: "Trải nghiệm đăng ký theo bước, phù hợp người mới.",
-        bullets: ["Thao tác theo bước", "Gọn nhẹ", "Tối ưu mobile"],
-        aff: "YOUR_AFF_LINK_HERE"
-      }
+    const offers = [
+      { name: "Mazila",     url: "https://rdr.pdlsd.net/in/offer/2930?aid=109166", tag: "Tham khảo", desc: "Chuyển hướng tới trang đối tác để xem điều kiện và thực hiện đăng ký.", points: ["Xem kỹ điều khoản trên trang đối tác", "Không chia sẻ OTP/mật khẩu"], code: "MZ" },
+      { name: "Credy",      url: "https://rdr.pdlsd.net/in/offer/2988?aid=109166", tag: "Phổ biến", desc: "Tham khảo lựa chọn và tiếp tục trên trang đăng ký chính thức của đối tác.", points: ["Điền thông tin chính xác", "Đọc kỹ phí và điều kiện"], code: "CR" },
+      { name: "CashOnline", url: "https://rdr.pdlsd.net/in/offer/8508?aid=109166", tag: "Online",    desc: "Mở trang đối tác trong tab mới để thực hiện đăng ký theo quy trình của họ.", points: ["Không cung cấp OTP/mật khẩu", "Chỉ đăng ký khi hiểu nghĩa vụ tài chính"], code: "CO" },
+      { name: "Credilo",    url: "https://rdr.pdlsd.net/in/offer/2929?aid=109166", tag: "Lựa chọn",  desc: "So sánh điều kiện và tiếp tục trên trang đối tác (nếu phù hợp).", points: ["Ưu tiên minh bạch", "Không đăng ký trùng quá nhiều nơi"], code: "CL" },
+      { name: "CashSpace",  url: "https://rdr.pdlsd.net/in/offer/3182?aid=109166", tag: "Tiện lợi",  desc: "Chuyển hướng tới đối tác. Điều kiện và phê duyệt do đối tác quyết định.", points: ["Đọc kỹ điều khoản", "Bảo vệ thông tin cá nhân"], code: "CS" },
+      { name: "Creditnice", url: "https://rdr.pdlsd.net/in/offer/6312?aid=109166", tag: "Ưu đãi",    desc: "Mở trang đối tác để xem điều kiện và thực hiện đăng ký (nếu phù hợp).", points: ["Không chia sẻ OTP/mật khẩu", "Kiểm tra phí/điều kiện trước khi xác nhận"], code: "CN" }
     ];
 
-    // -----------------------
-    // Theme
-    // -----------------------
-    const themeBtn = document.getElementById("themeBtn");
-    const themeIcon = document.getElementById("themeIcon");
-    const savedTheme = localStorage.getItem("cashs_theme");
-    if(savedTheme){ document.documentElement.setAttribute("data-theme", savedTheme); }
-    setThemeIcon();
+    const $ = (s, p=document) => p.querySelector(s);
+    const $$ = (s, p=document) => [...p.querySelectorAll(s)];
+    const escapeHtml = (str) => String(str).replace(/[&<>"']/g, m => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"
+    }[m]));
 
-    themeBtn.addEventListener("click", () => {
-      const cur = document.documentElement.getAttribute("data-theme") || "dark";
-      const next = cur === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      localStorage.setItem("cashs_theme", next);
-      setThemeIcon();
-    });
-
-    function setThemeIcon(){
-      const cur = document.documentElement.getAttribute("data-theme") || "dark";
-      themeIcon.textContent = (cur === "dark") ? "🌙" : "☀️";
-    }
-
-    // -----------------------
-    // Render offers
-    // -----------------------
-    const offersGrid = document.getElementById("offersGrid");
-    const searchInput = document.getElementById("searchInput");
-    const tagFilter = document.getElementById("tagFilter");
-    const sortBy = document.getElementById("sortBy");
-    const resetBtn = document.getElementById("resetBtn");
-
-    function safeLink(url){
-      // If you haven't set affiliate link, keep it non-clickable but still usable
-      if(!url || url === "YOUR_AFF_LINK_HERE") return "#";
-      return url;
-    }
-
-    function tagLabel(tag){
-      const map = { fast: "Duyệt nhanh", simple: "Đơn giản", popular: "Phổ biến", flex: "Linh hoạt" };
-      return map[tag] || "Gợi ý";
-    }
-
-    function sortOffers(list){
-      const mode = sortBy.value;
-      const copy = [...list];
-      if(mode === "name_asc") copy.sort((a,b)=> a.name.localeCompare(b.name));
-      if(mode === "name_desc") copy.sort((a,b)=> b.name.localeCompare(a.name));
-      if(mode === "badge"){
-        // popular first, then fast, simple, flex, then name
-        const rank = { popular: 0, fast: 1, simple: 2, flex: 3 };
-        copy.sort((a,b)=> (rank[a.tag] ?? 9) - (rank[b.tag] ?? 9) || a.name.localeCompare(b.name));
-      }
-      return copy;
-    }
-
-    function applyFilters(){
-      const q = (searchInput.value || "").trim().toLowerCase();
-      const tag = tagFilter.value;
-
-      let list = OFFERS.filter(o => {
-        const hit = o.name.toLowerCase().includes(q);
-        const tagOk = (tag === "all") ? true : o.tag === tag;
-        return hit && tagOk;
-      });
-
-      list = sortOffers(list);
-      renderOffers(list);
-    }
-
-    function renderOffers(list){
-      offersGrid.innerHTML = "";
-      if(list.length === 0){
-        offersGrid.innerHTML = `<div class="small">Không tìm thấy offer phù hợp. Vui lòng thử từ khoá khác.</div>`;
-        return;
-      }
-
-      for(const o of list){
-        const aff = safeLink(o.aff);
-        const disabled = (aff === "#");
-        const registerText = disabled ? "Chưa gắn link" : "Đăng ký";
-
-        const el = document.createElement("div");
-        el.className = "offer";
-        el.innerHTML = `
-          <div class="offer-top">
-            <div>
-              <p class="offer-name">${o.name}</p>
-              <div class="tag" title="Nhãn gợi ý">${tagLabel(o.tag)}</div>
-            </div>
-            <label class="compare" title="Chọn để so sánh (tối đa 3)">
-              <input type="checkbox" data-compare="${o.id}" />
-              So sánh
-            </label>
+    const grid = $("#offerGrid");
+    grid.innerHTML = offers.map(o => `
+      <article class="offer" aria-label="Đối tác ${escapeHtml(o.name)}">
+        <div class="offerTop">
+          <div class="offerName">
+            <div class="badgeLogo" aria-hidden="true"><span>${escapeHtml(o.code)}</span></div>
+            <h3 title="${escapeHtml(o.name)}">${escapeHtml(o.name)}</h3>
           </div>
+          <span class="tag">${escapeHtml(o.tag)}</span>
+        </div>
+        <p class="offerDesc">${escapeHtml(o.desc)}</p>
+        <ul class="points">
+          ${o.points.map(p => `<li>${escapeHtml(p)}</li>`).join("")}
+       <!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#F7FAFF" />
+  <title>Cashs.site — Cổng tham khảo & chuyển hướng đăng ký đối tác</title>
+  <meta name="description" content="Cashs.site là cổng tham khảo thông tin và chuyển hướng tới trang đăng ký của các đối tác. Chúng tôi không phải đơn vị cho vay và không thu thập dữ liệu nhạy cảm trên website." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://cashs.site/" />
 
-          <p class="offer-desc"><b>${o.tagline}</b> — ${o.desc}</p>
+  <meta property="og:title" content="Cashs.site — Cổng tham khảo & chuyển hướng đăng ký đối tác" />
+  <meta property="og:description" content="Tham khảo thông tin và chuyển hướng tới đối tác. Không phải đơn vị cho vay. Không thu thập dữ liệu nhạy cảm trên website." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cashs.site/" />
+  <meta property="og:image" content="https://cashs.site/og.png" />
 
-          <ul class="bullets">
-            ${o.bullets.map(x => `<li>${x}</li>`).join("")}
-          </ul>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2338BDF8'/%3E%3Cstop offset='1' stop-color='%2322C55E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23F7FAFF'/%3E%3Cpath d='M18 38c0 8 7 14 14 14s14-6 14-14c0-6-4-11-10-13V16h-8v9C22 27 18 32 18 38z' fill='url(%23g)'/%3E%3Cpath d='M26 39h12' stroke='%230F172A' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
 
-          <div class="actions">
-            <a class="link primary" href="${aff}" ${disabled ? "" : 'target="_blank" rel="noopener noreferrer"'} data-aff="${o.id}">
-              ${registerText}
-            </a>
-            <a class="link" href="#policy">Xem điều khoản</a>
+  <style>
+    :root{
+      --bg: #F7FAFF;
+      --card: #FFFFFF;
+      --card2: #F1F5F9;
+      --text: #0F172A;
+      --muted: #475569;
+      --border: #E2E8F0;
+      --shadow: 0 10px 30px rgba(15,23,42,.08);
+
+      --brand1: #38BDF8; /* primary */
+      --brand2: #22C55E; /* CTA */
+      --warn: #F59E0B;
+      --good: #16A34A;
+      --bad: #DC2626;
+
+      --radius: 16px;
+      --radius2: 22px;
+      --maxw: 1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 18% 0%, rgba(56,189,248,.20), transparent 60%),
+        radial-gradient(900px 520px at 82% 0%, rgba(34,197,94,.18), transparent 60%),
+        radial-gradient(900px 520px at 50% 120%, rgba(99,102,241,.10), transparent 65%),
+        var(--bg);
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:0 16px}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(1.2) blur(10px);
+      background: rgba(247,250,255,.85);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0; gap:12px;}
+    .brand{display:flex; align-items:center; gap:10px; min-width: 180px;}
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      box-shadow: var(--shadow);
+      background: linear-gradient(135deg, rgba(56,189,248,.95), rgba(34,197,94,.95));
+      display:grid; place-items:center;
+      border:1px solid var(--border);
+    }
+    .logo svg{width:22px; height:22px; opacity:.98}
+    .brand h1{font-size:15px; line-height:1.1; margin:0}
+    .brand p{font-size:12px; margin:2px 0 0; color:var(--muted)}
+    .menu{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .chip{
+      padding:8px 12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.7);
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .chip:hover{color:var(--text); border-color:rgba(56,189,248,.35)}
+    .btn{
+      border:none; cursor:pointer;
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:13px;
+      color:#062016;
+      background: linear-gradient(135deg, var(--brand1), var(--brand2));
+      box-shadow: 0 10px 22px rgba(34,197,94,.18);
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .btn:active{transform: translateY(1px)}
+    .ghost{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.7);
+      color:var(--text);
+      box-shadow:none;
+      font-weight:800;
+    }
+
+    .hero{padding:26px 0 10px;}
+    .heroGrid{display:grid; grid-template-columns: 1.2fr .8fr; gap:14px; align-items:stretch;}
+    @media (max-width: 920px){ .heroGrid{grid-template-columns: 1fr;} .brand{min-width:auto} }
+
+    .card{
+      border:1px solid var(--border);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.75);
+      box-shadow: var(--shadow);
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .card:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background:
+        radial-gradient(420px 220px at 12% 8%, rgba(56,189,248,.14), transparent 60%),
+        radial-gradient(420px 220px at 78% 16%, rgba(34,197,94,.12), transparent 60%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .card > *{position:relative}
+
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.65);
+      color:var(--muted);
+      font-size:12px;
+      margin-bottom:10px;
+    }
+    .title{
+      font-size:30px;
+      line-height:1.12;
+      margin:6px 0 10px;
+      letter-spacing: -0.02em;
+    }
+    @media (max-width: 420px){ .title{font-size:26px} }
+    .subtitle{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+      max-width: 62ch;
+    }
+    .heroActions{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .trustRow{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.65);
+      border-radius:999px;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .section{padding:18px 0;}
+    .sectionHead{display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin: 8px 0 14px;}
+    .sectionHead h2{margin:0; font-size:18px}
+    .sectionHead p{margin:0; color:var(--muted); font-size:13px}
+
+    .grid{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;}
+    @media (max-width: 980px){ .grid{grid-template-columns: repeat(2, 1fr);} }
+    @media (max-width: 560px){ .grid{grid-template-columns: 1fr;} }
+
+    .offer{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 10px 22px rgba(15,23,42,.06);
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height: 200px;
+      position:relative;
+      overflow:hidden;
+    }
+    .offer:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background:
+        radial-gradient(240px 140px at 10% 5%, rgba(56,189,248,.10), transparent 60%),
+        radial-gradient(240px 140px at 90% 10%, rgba(34,197,94,.10), transparent 60%);
+      pointer-events:none;
+    }
+    .offer > *{position:relative}
+    .offerTop{display:flex; align-items:center; justify-content:space-between; gap:10px;}
+    .offerName{display:flex; align-items:center; gap:10px; min-width: 0;}
+    .badgeLogo{
+      width:40px; height:40px; border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(241,245,249,.9);
+      display:grid; place-items:center;
+      flex: 0 0 auto;
+    }
+    .badgeLogo span{font-weight:900; font-size:13px; letter-spacing:.02em;}
+    .offerName h3{margin:0; font-size:16px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+    .tag{
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid var(--border);
+      background: rgba(241,245,249,.85);
+      padding:6px 10px;
+      border-radius:999px;
+      flex: 0 0 auto;
+    }
+    .offerDesc{margin:0; color:var(--muted); font-size:13px; line-height:1.6;}
+    .points{margin:0; padding-left:18px; color:var(--muted); font-size:13px; line-height:1.65;}
+    .offerActions{margin-top:auto; display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between;}
+    .small{font-size:12px; color:var(--muted);}
+    .link{color: var(--text); text-decoration: underline; text-underline-offset: 3px; opacity:.9;}
+
+    .faq{
+      border:1px solid var(--border);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .qa{border-top:1px solid var(--border); padding:14px 14px;}
+    .qa:first-child{border-top:none}
+    .q{display:flex; align-items:center; justify-content:space-between; gap:12px; cursor:pointer; user-select:none;}
+    .q h3{margin:0; font-size:14px}
+    .q .chev{
+      width:34px; height:34px; border-radius:10px;
+      border:1px solid var(--border);
+      display:grid; place-items:center;
+      background: rgba(241,245,249,.9);
+      transition: transform .18s ease;
+      flex: 0 0 auto;
+    }
+    .a{max-height:0; overflow:hidden; transition: max-height .22s ease;}
+    .a p{margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.7;}
+    .qa.open .a{max-height: 320px}
+    .qa.open .q .chev{transform: rotate(180deg)}
+
+    .footer{padding:26px 0 96px; border-top:1px solid var(--border); margin-top:10px;}
+    .footGrid{display:grid; grid-template-columns: 1.25fr .75fr; gap:16px; align-items:start;}
+    @media (max-width: 860px){ .footGrid{grid-template-columns:1fr} }
+    .footNote{color:var(--muted); font-size:12.5px; line-height:1.7}
+    .footLinks{display:flex; gap:10px; flex-wrap:wrap}
+
+    .stickyCta{
+      position:fixed; left:0; right:0; bottom:0;
+      padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+      background: rgba(247,250,255,.92);
+      backdrop-filter: blur(10px);
+      border-top:1px solid var(--border);
+      z-index:60;
+    }
+    .stickyRow{
+      max-width:var(--maxw); margin:0 auto;
+      display:flex; gap:10px; align-items:center; justify-content:space-between;
+    }
+    .select{
+      flex: 1 1 auto; min-width: 0;
+      border:1px solid var(--border);
+      border-radius: 999px;
+      padding:12px 14px;
+      background: rgba(255,255,255,.88);
+      color: var(--text);
+      font-weight:800;
+      outline:none;
+      appearance:none;
+      cursor:pointer;
+    }
+    .sr{position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden;}
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="Cashs.site">
+          <div class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 14.5C7 17.537 9.463 20 12.5 20C15.537 20 18 17.537 18 14.5C18 12.136 16.51 10.115 14.4 9.33V4H10.6V9.33C8.49 10.115 7 12.136 7 14.5Z" fill="rgba(15,23,42,.92)"/>
+              <path d="M10 14.5h5" stroke="rgba(15,23,42,.92)" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
           </div>
-
-          ${disabled ? `<div class="small">Gợi ý: thay <b>YOUR_AFF_LINK_HERE</b> bằng link affiliate cho <b>${o.name}</b>.</div>` : ``}
-        `;
-        offersGrid.appendChild(el);
-      }
-
-      // bind compare checkboxes
-      offersGrid.querySelectorAll('input[type="checkbox"][data-compare]').forEach(cb => {
-        cb.addEventListener("change", onCompareChange);
-      });
-
-      // Optional: track clicks (placeholder)
-      offersGrid.querySelectorAll('a[data-aff]').forEach(a => {
-        a.addEventListener("click", (e) => {
-          if(a.getAttribute("href") === "#"){
-            e.preventDefault();
-            alert("Link affiliate chưa được gắn. Vui lòng cập nhật YOUR_AFF_LINK_HERE trong mã nguồn.");
-          } else {
-            // TODO: Add analytics call if you want (e.g., gtag)
-            // console.log("Affiliate click:", a.dataset.aff);
-          }
-        });
-      });
-    }
-
-    searchInput.addEventListener("input", applyFilters);
-    tagFilter.addEventListener("change", applyFilters);
-    sortBy.addEventListener("change", applyFilters);
-    resetBtn.addEventListener("click", () => {
-      searchInput.value = "";
-      tagFilter.value = "all";
-      sortBy.value = "name_asc";
-      applyFilters();
-    });
-
-    // Initial render
-    applyFilters();
-
-    // -----------------------
-    // FAQ accordion
-    // -----------------------
-    document.querySelectorAll(".faq .q").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const item = btn.closest(".item");
-        const ans = item.querySelector(".a");
-        const open = ans.style.display === "block";
-        document.querySelectorAll(".faq .a").forEach(a => a.style.display = "none");
-        document.querySelectorAll(".faq .q span:last-child").forEach(s => s.textContent = "+");
-        if(!open){
-          ans.style.display = "block";
-          btn.querySelector("span:last-child").textContent = "–";
-        }
-      });
-    });
-
-    // -----------------------
-    // Compare feature
-    // -----------------------
-    const compareDrawer = document.getElementById("compareDrawer");
-    const compareList = document.getElementById("compareList");
-    const compareOpenBtn = document.getElementById("compareOpenBtn");
-    const stickyCompareBtn = document.getElementById("stickyCompareBtn");
-    const compareCloseBtn = document.getElementById("compareCloseBtn");
-    const compareClearBtn = document.getElementById("compareClearBtn");
-    const compareScrollBtn = document.getElementById("compareScrollBtn");
-
-    let compareSet = new Set();
-
-    function onCompareChange(e){
-      const id = e.target.getAttribute("data-compare");
-      if(e.target.checked){
-        if(compareSet.size >= 3){
-          e.target.checked = false;
-          alert("Bạn chỉ có thể so sánh tối đa 3 offers.");
-          return;
-        }
-        compareSet.add(id);
-      } else {
-        compareSet.delete(id);
-      }
-      renderCompare();
-      if(compareSet.size > 0) showCompare();
-    }
-
-    function renderCompare(){
-      const ids = Array.from(compareSet);
-      compareList.innerHTML = "";
-      if(ids.length === 0){
-        compareList.innerHTML = `<div class="small">Chưa chọn offer nào.</div>`;
-        return;
-      }
-      const items = ids.map(id => OFFERS.find(o => o.id === id)).filter(Boolean);
-      for(const o of items){
-        const aff = safeLink(o.aff);
-        const disabled = (aff === "#");
-        const row = document.createElement("div");
-        row.className = "compare-item";
-        row.innerHTML = `
           <div>
-            <div style="font-weight:800">${o.name}</div>
-            <div class="small">${tagLabel(o.tag)} · ${o.tagline}</div>
+            <h1>Cashs.site</h1>
+            <p>Thông tin tham khảo • Chuyển hướng đối tác</p>
           </div>
-          <div style="display:flex; gap:8px; align-items:center;">
-            <a class="xbtn" href="${aff}" ${disabled ? "" : 'target="_blank" rel="noopener noreferrer"'}>${disabled ? "Chưa link" : "Đăng ký"}</a>
-            <button class="xbtn" data-remove="${o.id}" type="button">X</button>
+        </a>
+
+        <nav class="menu" aria-label="Menu">
+          <a class="chip" href="#offers">Đối tác</a>
+          <a class="chip" href="#how">Quy trình</a>
+          <a class="chip" href="#faq">FAQ</a>
+          <a class="chip" href="terms.html">Điều khoản</a>
+          <a class="chip" href="privacy.html">Chính sách</a>
+          <a class="btn" href="#offers">Chọn đối tác</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="heroGrid">
+        <div class="card">
+          <div class="kicker">● Website tham khảo thông tin và chuyển hướng đăng ký</div>
+          <h2 class="title">Chọn đối tác phù hợp và tiếp tục đăng ký trên trang chính thức</h2>
+          <p class="subtitle">
+            Cashs.site <strong>không phải đơn vị cho vay</strong>. Website chỉ cung cấp thông tin tham khảo và liên kết chuyển hướng.
+            Việc xét duyệt, điều kiện, phí và quy trình thuộc về từng đối tác.
+          </p>
+
+          <div class="heroActions">
+            <a class="btn" href="#offers">Xem đối tác</a>
+            <a class="btn ghost" href="contact.html">Liên hệ</a>
           </div>
-        `;
-        compareList.appendChild(row);
-      }
 
-      compareList.querySelectorAll("button[data-remove]").forEach(btn => {
-        btn.addEventListener("click", () => {
-          const id = btn.getAttribute("data-remove");
-          compareSet.delete(id);
-          // uncheck checkbox if visible
-          document.querySelectorAll(`input[data-compare="${id}"]`).forEach(cb => cb.checked = false);
-          renderCompare();
-          if(compareSet.size === 0) hideCompare();
-        });
+          <div class="trustRow" aria-label="Nguyên tắc an toàn">
+            <span class="pill">Không yêu cầu OTP/mật khẩu</span>
+            <span class="pill">Không nhập dữ liệu nhạy cảm tại đây</span>
+            <span class="pill">Khuyến nghị vay có trách nhiệm</span>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h3 style="margin:0; font-size:14px;">Thông tin quan trọng</h3>
+          <p style="margin:8px 0 0; color:var(--muted); font-size:13px; line-height:1.7;">
+            Để giảm rủi ro bị từ chối/hủy yêu cầu, bạn nên:
+          </p>
+          <ul style="margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:13px; line-height:1.7;">
+            <li>Điền thông tin chính xác, tránh dùng dữ liệu giả</li>
+            <li>Đọc kỹ phí, lãi (nếu có), thời hạn, điều kiện</li>
+            <li>Không cung cấp OTP/mật khẩu cho bất kỳ ai</li>
+            <li>Chỉ đăng ký khi bạn hiểu rõ nghĩa vụ thanh toán</li>
+          </ul>
+          <p style="margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.7;">
+            Xem thêm: <a class="link" href="terms.html">Điều khoản</a> • <a class="link" href="privacy.html">Chính sách</a>
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- OFFERS -->
+    <section id="offers" class="section">
+      <div class="sectionHead">
+        <div>
+          <h2>Danh sách đối tác</h2>
+          <p>Nhấn “Tiếp tục” để mở trang đối tác trong tab mới.</p>
+        </div>
+        <p class="small">Không cam kết duyệt. Điều kiện do đối tác quyết định.</p>
+      </div>
+
+      <div class="grid" id="offerGrid"></div>
+    </section>
+
+    <!-- HOW -->
+    <section id="how" class="section">
+      <div class="sectionHead">
+        <div>
+          <h2>Quy trình</h2>
+          <p>Minh bạch vai trò: Cashs.site chỉ chuyển hướng tới đối tác.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="offer">
+          <div class="offerTop">
+            <div class="offerName">
+              <div class="badgeLogo"><span>1</span></div>
+              <h3>Chọn đối tác</h3>
+            </div>
+            <span class="tag">Tham khảo</span>
+          </div>
+          <p class="offerDesc">Xem thông tin và chọn một đối tác phù hợp với nhu cầu của bạn.</p>
+          <ul class="points">
+            <li>Ưu tiên điều kiện rõ ràng</li>
+            <li>Đọc kỹ các khoản phí/điều khoản</li>
+          </ul>
+        </div>
+
+        <div class="offer">
+          <div class="offerTop">
+            <div class="offerName">
+              <div class="badgeLogo"><span>2</span></div>
+              <h3>Đăng ký trên trang đối tác</h3>
+            </div>
+            <span class="tag">Chính thức</span>
+          </div>
+          <p class="offerDesc">Bạn sẽ được chuyển sang trang đối tác để thực hiện đăng ký theo quy trình của họ.</p>
+          <ul class="points">
+            <li>Không chia sẻ OTP/mật khẩu</li>
+            <li>Điền thông tin trung thực</li>
+          </ul>
+        </div>
+
+        <div class="offer">
+          <div class="offerTop">
+            <div class="offerName">
+              <div class="badgeLogo"><span>3</span></div>
+              <h3>Nhận phản hồi</h3>
+            </div>
+            <span class="tag">Tùy đối tác</span>
+          </div>
+          <p class="offerDesc">Thời gian xử lý và kết quả phụ thuộc vào đối tác và thông tin hồ sơ.</p>
+          <ul class="points">
+            <li>Không có cam kết duyệt</li>
+            <li>Chỉ đăng ký khi hiểu nghĩa vụ tài chính</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="sectionHead">
+        <div>
+          <h2>FAQ</h2>
+          <p>Câu trả lời rõ ràng để giảm hiểu nhầm và rủi ro.</p>
+        </div>
+      </div>
+
+      <div class="faq" id="faqBox">
+        <div class="qa">
+          <div class="q" role="button" tabindex="0" aria-expanded="false">
+            <h3>Cashs.site có phải đơn vị cho vay không?</h3>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </div>
+          <div class="a" aria-hidden="true">
+            <p>
+              Không. Cashs.site là website tham khảo và chuyển hướng tới trang đăng ký của đối tác.
+              Việc xét duyệt, điều kiện, phí và hợp đồng thuộc về từng đối tác.
+            </p>
+          </div>
+        </div>
+
+        <div class="qa">
+          <div class="q" role="button" tabindex="0" aria-expanded="false">
+            <h3>Tôi có cần nhập thông tin nhạy cảm trên Cashs.site không?</h3>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </div>
+          <div class="a" aria-hidden="true">
+            <p>
+              Không. Cashs.site không thiết kế để thu thập dữ liệu nhạy cảm (OTP, mật khẩu, thông tin tài khoản).
+              Khi bạn chuyển sang đối tác, họ có chính sách riêng về thu thập và xử lý dữ liệu.
+            </p>
+          </div>
+        </div>
+
+        <div class="qa">
+          <div class="q" role="button" tabindex="0" aria-expanded="false">
+            <h3>Tại sao tôi bị từ chối/hủy yêu cầu?</h3>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </div>
+          <div class="a" aria-hidden="true">
+            <p>
+              Kết quả phụ thuộc vào đối tác và hồ sơ. Một số nguyên nhân phổ biến: thông tin không khớp, thiếu giấy tờ,
+              không đáp ứng điều kiện, hoặc trùng lặp đăng ký nhiều nơi. Bạn nên điền thông tin chính xác và đọc điều khoản.
+            </p>
+          </div>
+        </div>
+
+        <div class="qa">
+          <div class="q" role="button" tabindex="0" aria-expanded="false">
+            <h3>Cashs.site có cam kết giải ngân/duyệt nhanh không?</h3>
+            <div class="chev" aria-hidden="true">⌄</div>
+          </div>
+          <div class="a" aria-hidden="true">
+            <p>
+              Không. Cashs.site không đưa ra cam kết duyệt/giải ngân. Các thông tin về thời gian xử lý (nếu có) thuộc về đối tác.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <div class="footGrid">
+        <div>
+          <div class="brand" style="min-width:auto">
+            <div class="logo" aria-hidden="true" style="width:34px;height:34px;border-radius:12px">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7 14.5C7 17.537 9.463 20 12.5 20C15.537 20 18 17.537 18 14.5C18 12.136 16.51 10.115 14.4 9.33V4H10.6V9.33C8.49 10.115 7 12.136 7 14.5Z" fill="rgba(15,23,42,.92)"/>
+                <path d="M10 14.5h5" stroke="rgba(15,23,42,.92)" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h1 style="font-size:14px;margin:0">Cashs.site</h1>
+              <p style="margin:2px 0 0;color:var(--muted);font-size:12px">Tham khảo • Chuyển hướng</p>
+            </div>
+          </div>
+
+          <p class="footNote" style="margin-top:12px">
+            <strong>Miễn trừ trách nhiệm:</strong> Cashs.site chỉ cung cấp thông tin tham khảo và liên kết chuyển hướng.
+            Cashs.site không phải tổ chức tín dụng/cho vay, không đại diện đối tác ký kết hợp đồng, không quyết định xét duyệt,
+            hạn mức, chi phí hoặc điều kiện. Quyết định thuộc về đối tác.
+          </p>
+          <p class="footNote">
+            <strong>Khuyến nghị:</strong> Vay có trách nhiệm. Chỉ đăng ký khi bạn hiểu rõ nghĩa vụ thanh toán và khả năng chi trả.
+          </p>
+        </div>
+
+        <div>
+          <h3 style="margin:0 0 10px;font-size:14px">Pháp lý & liên hệ</h3>
+          <div class="footLinks">
+            <a class="chip" href="terms.html">Điều khoản</a>
+            <a class="chip" href="privacy.html">Chính sách</a>
+            <a class="chip" href="contact.html">Liên hệ</a>
+          </div>
+          <p class="footNote" style="margin-top:12px">
+            Nếu bạn là đối tác/đơn vị liên quan và cần xử lý nội dung, vui lòng liên hệ qua trang Liên hệ.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Sticky CTA -->
+  <div class="stickyCta" role="region" aria-label="Chuyển hướng nhanh">
+    <div class="stickyRow">
+      <label class="sr" for="quickSelect">Chọn đối tác</label>
+      <select class="select" id="quickSelect" aria-label="Chọn đối tác để chuyển hướng">
+        <option value="" selected>Chọn đối tác để tiếp tục…</option>
+      </select>
+      <button class="btn" id="quickGo" type="button">Tiếp tục</button>
+    </div>
+  </div>
+
+  <script>
+    const offers = [
+      { name: "Mazila",     url: "https://rdr.pdlsd.net/in/offer/2930?aid=109166", tag: "Tham khảo", desc: "Chuyển hướng tới trang đối tác để xem điều kiện và thực hiện đăng ký.", points: ["Xem kỹ điều khoản trên trang đối tác", "Không chia sẻ OTP/mật khẩu"], code: "MZ" },
+      { name: "Credy",      url: "https://rdr.pdlsd.net/in/offer/2988?aid=109166", tag: "Phổ biến", desc: "Tham khảo lựa chọn và tiếp tục trên trang đăng ký chính thức của đối tác.", points: ["Điền thông tin chính xác", "Đọc kỹ phí và điều kiện"], code: "CR" },
+      { name: "CashOnline", url: "https://rdr.pdlsd.net/in/offer/8508?aid=109166", tag: "Online",    desc: "Mở trang đối tác trong tab mới để thực hiện đăng ký theo quy trình của họ.", points: ["Không cung cấp OTP/mật khẩu", "Chỉ đăng ký khi hiểu nghĩa vụ tài chính"], code: "CO" },
+      { name: "Credilo",    url: "https://rdr.pdlsd.net/in/offer/2929?aid=109166", tag: "Lựa chọn",  desc: "So sánh điều kiện và tiếp tục trên trang đối tác (nếu phù hợp).", points: ["Ưu tiên minh bạch", "Không đăng ký trùng quá nhiều nơi"], code: "CL" },
+      { name: "CashSpace",  url: "https://rdr.pdlsd.net/in/offer/3182?aid=109166", tag: "Tiện lợi",  desc: "Chuyển hướng tới đối tác. Điều kiện và phê duyệt do đối tác quyết định.", points: ["Đọc kỹ điều khoản", "Bảo vệ thông tin cá nhân"], code: "CS" },
+      { name: "Creditnice", url: "https://rdr.pdlsd.net/in/offer/6312?aid=109166", tag: "Ưu đãi",    desc: "Mở trang đối tác để xem điều kiện và thực hiện đăng ký (nếu phù hợp).", points: ["Không chia sẻ OTP/mật khẩu", "Kiểm tra phí/điều kiện trước khi xác nhận"], code: "CN" }
+    ];
+
+    const $ = (s, p=document) => p.querySelector(s);
+    const $$ = (s, p=document) => [...p.querySelectorAll(s)];
+    const escapeHtml = (str) => String(str).replace(/[&<>"']/g, m => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"
+    }[m]));
+
+    const grid = $("#offerGrid");
+    grid.innerHTML = offers.map(o => `
+      <article class="offer" aria-label="Đối tác ${escapeHtml(o.name)}">
+        <div class="offerTop">
+          <div class="offerName">
+            <div class="badgeLogo" aria-hidden="true"><span>${escapeHtml(o.code)}</span></div>
+            <h3 title="${escapeHtml(o.name)}">${escapeHtml(o.name)}</h3>
+          </div>
+          <span class="tag">${escapeHtml(o.tag)}</span>
+        </div>
+        <p class="offerDesc">${escapeHtml(o.desc)}</p>
+        <ul class="points">
+          ${o.points.map(p => `<li>${escapeHtml(p)}</li>`).join("")}
+        </ul>
+        <div class="offerActions">
+          <a class="btn" href="${escapeHtml(o.url)}" target="_blank" rel="nofollow noopener">Tiếp tục</a>
+          <a class="link small" href="${escapeHtml(o.url)}" target="_blank" rel="nofollow noopener">Mở liên kết</a>
+        </div>
+        <p class="small">Lưu ý: Cashs.site không cam kết duyệt/giải ngân.</p>
+      </article>
+    `).join("");
+
+    const sel = $("#quickSelect");
+    sel.innerHTML += offers.map(o => `<option value="${escapeHtml(o.url)}">${escapeHtml(o.name)}</option>`).join("");
+
+    $("#quickGo").addEventListener("click", () => {
+      const v = sel.value;
+      if(!v){ document.getElementById("offers").scrollIntoView({behavior:"smooth"}); return; }
+      window.open(v, "_blank", "noopener,noreferrer");
+    });
+
+    function toggleQA(qa){
+      const isOpen = qa.classList.toggle("open");
+      const q = qa.querySelector(".q");
+      const a = qa.querySelector(".a");
+      q.setAttribute("aria-expanded", String(isOpen));
+      a.setAttribute("aria-hidden", String(!isOpen));
+    }
+    $$(".qa").forEach(qa => {
+      const q = qa.querySelector(".q");
+      q.addEventListener("click", () => toggleQA(qa));
+      q.addEventListener("keydown", (e) => {
+        if(e.key === "Enter" || e.key === " "){
+          e.preventDefault();
+          toggleQA(qa);
+        }
       });
+    });
+  </script>
+</body>
+</html> </ul>
+        <div class="offerActions">
+          <a class="btn" href="${escapeHtml(o.url)}" target="_blank" rel="nofollow noopener">Tiếp tục</a>
+          <a class="link small" href="${escapeHtml(o.url)}" target="_blank" rel="nofollow noopener">Mở liên kết</a>
+        </div>
+        <p class="small">Lưu ý: Cashs.site không cam kết duyệt/giải ngân.</p>
+      </article>
+    `).join("");
 
-      // prevent empty link
-      compareList.querySelectorAll('a.xbtn').forEach(a => {
-        a.addEventListener("click", (ev) => {
-          if(a.getAttribute("href") === "#"){
-            ev.preventDefault();
-            alert("Link affiliate chưa được gắn. Vui lòng cập nhật YOUR_AFF_LINK_HERE trong mã nguồn.");
-          }
-        });
+    const sel = $("#quickSelect");
+    sel.innerHTML += offers.map(o => `<option value="${escapeHtml(o.url)}">${escapeHtml(o.name)}</option>`).join("");
+
+    $("#quickGo").addEventListener("click", () => {
+      const v = sel.value;
+      if(!v){ document.getElementById("offers").scrollIntoView({behavior:"smooth"}); return; }
+      window.open(v, "_blank", "noopener,noreferrer");
+    });
+
+    function toggleQA(qa){
+      const isOpen = qa.classList.toggle("open");
+      const q = qa.querySelector(".q");
+      const a = qa.querySelector(".a");
+      q.setAttribute("aria-expanded", String(isOpen));
+      a.setAttribute("aria-hidden", String(!isOpen));
+    }
+    $$(".qa").forEach(qa => {
+      const q = qa.querySelector(".q");
+      q.addEventListener("click", () => toggleQA(qa));
+      q.addEventListener("keydown", (e) => {
+        if(e.key === "Enter" || e.key === " "){
+          e.preventDefault();
+          toggleQA(qa);
+        }
       });
-    }
-
-    function showCompare(){
-      compareDrawer.style.display = "block";
-    }
-    function hideCompare(){
-      compareDrawer.style.display = "none";
-    }
-
-    compareOpenBtn.addEventListener("click", () => {
-      renderCompare();
-      showCompare();
     });
-    stickyCompareBtn.addEventListener("click", () => {
-      renderCompare();
-      showCompare();
-    });
-    compareCloseBtn.addEventListener("click", hideCompare);
-    compareClearBtn.addEventListener("click", () => {
-      compareSet.clear();
-      document.querySelectorAll(`input[data-compare]`).forEach(cb => cb.checked = false);
-      renderCompare();
-      hideCompare();
-    });
-    compareScrollBtn.addEventListener("click", () => {
-      document.querySelector("#offers").scrollIntoView({behavior:"smooth"});
-    });
-
-    // -----------------------
-    // Footer year
-    // -----------------------
-    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
